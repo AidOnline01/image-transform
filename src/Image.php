@@ -4,7 +4,7 @@ namespace ITDevv\ImageTransform;
 use Imagick;
 
 class Image {
-    private $source;
+    public $source;
     public $info;
 
     public function load($path) {
@@ -76,10 +76,6 @@ class Image {
         }
 
         $this->source->adaptiveResizeImage($width, $height);
-    }
-
-    public function convertWebp() {
-
     }
 
     public function save($path, $type = 'png', $quality = 0) {
