@@ -1,6 +1,5 @@
 <?php
 namespace ITDevv\ImageTransform;
-echo 'test';
 
 include __DIR__ . '/../vendor/autoload.php';
 
