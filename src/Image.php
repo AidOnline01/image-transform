@@ -78,10 +78,11 @@ class Image {
         $this->source->adaptiveResizeImage($width, $height);
     }
 
-    public function save($path, $type = 'png', $quality = 0) {
+    public function save($path, $type, $quality = 85) {
         $dir = dirname($path);
         if(!file_exists($dir)) mkdir($dir, 0775, true);
-        
+
+        $this->source->setImageCompressionQuality($quality);
         $this->source->writeImage("$type:$path");
     }
 }
