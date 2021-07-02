@@ -1,5 +1,5 @@
 <?php
-error_reporting(E_STRICT);
+namespace ITDevv\TransformImage;
 
 include __DIR__ . '/../Image.php';
 

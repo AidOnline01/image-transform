@@ -1,5 +1,7 @@
 <?php
 
+namespace ITDevv\TransformImage;
+
 class Image {
     private $source;
     public $info;
