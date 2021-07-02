@@ -79,6 +79,9 @@ class Image {
     }
 
     public function save($path, $type = 'png', $quality = 0) {
+        $dir = dirname($path);
+        if(!file_exists($dir)) mkdir($dir, 0775, true);
+        
         $this->source->writeImage("$type:$path");
     }
 }
