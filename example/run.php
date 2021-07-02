@@ -26,7 +26,7 @@ function fitImage($path, $dest) {
 
     if(!$image->load($path)) die('Image doesn\'t exist');
     
-    $image->fit(400, 400, 'center', 'center');
+    $image->fit(400, 400);
     
     $image->save("$dest.fit.jpg", 'jpg');
     $image->save("$dest.fit.jpg.webp", 'webp');
@@ -37,7 +37,7 @@ function resizeImage($path, $dest) {
 
     if(!$image->load($path)) die('Image doesn\'t exist');
     
-    $image->resize(400, 400, 'center', 'center');
+    $image->resize(400, false);
     
     $image->save("$dest.resize.jpg", 'jpg');
     $image->save("$dest.resize.jpg.webp", 'webp');

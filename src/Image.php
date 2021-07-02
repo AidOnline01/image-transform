@@ -31,6 +31,11 @@ class Image {
 
     // resize image to exact size
     public function resize($width, $height) {
+        if(!$width && !$height) return false;
+        
+        if(!$width)  $width = (int)($height / $this->info['height'] * $this->info['width']); 
+        if(!$height) $height = (int)($width / $this->info['width'] * $this->info['height']);
+        
         $this->source->adaptiveResizeImage($width, $height);
     }
 
