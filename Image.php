@@ -1,6 +1,6 @@
 <?php
 
-namespace ITDevv\TransformImage;
+namespace ITDevv\ImageTransform;
 
 class Image {
     private $source;

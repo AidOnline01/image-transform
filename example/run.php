@@ -1,5 +1,5 @@
 <?php
-namespace ITDevv\TransformImage;
+namespace ITDevv\ImageTransform;
 
 include __DIR__ . '/../Image.php';
 
