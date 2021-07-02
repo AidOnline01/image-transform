@@ -1,7 +1,8 @@
 <?php
 namespace ITDevv\ImageTransform;
+echo 'test';
 
-include __DIR__ . '/../Image.php';
+include __DIR__ . '/../vendor/autoload.php';
 
 $path = __DIR__ . '/source.jpg';
 $dest = __DIR__ . '/dist/dest';

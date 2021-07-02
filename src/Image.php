@@ -1,6 +1,7 @@
 <?php
 
 namespace ITDevv\ImageTransform;
+use Imagick;
 
 class Image {
     private $source;
