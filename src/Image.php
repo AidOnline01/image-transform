@@ -23,6 +23,8 @@ class Image {
         $info['ext'] = strToLower($this->source->getImageFormat());
         if($info['ext'] === 'jpeg') $info['ext'] = 'jpg';
 
+        $info['mime'] = $this->source->getImageMimeType();
+
         $info['width'] = $this->source->getImageWidth();
         $info['height'] = $this->source->getImageHeight();
         
