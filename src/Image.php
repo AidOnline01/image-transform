@@ -12,7 +12,11 @@ class Image {
 
         if(!file_exists($this->path)) return false;
 
-        $this->source = new Imagick($this->path);
+        
+        $this->source = new Imagick();
+
+        $this->source->readImage($this->path);
+
         $this->info = $this->getInfo();
 
         return true;
@@ -38,7 +42,7 @@ class Image {
         if(!$width)  $width = (int)($height / $this->info['height'] * $this->info['width']); 
         if(!$height) $height = (int)($width / $this->info['width'] * $this->info['height']);
         
-        $this->source->adaptiveResizeImage($width, $height);
+        $this->source->resizeImage($width, $height, Imagick::FILTER_SINC, 1);
     }
 
     // crop image to specified area
@@ -61,7 +65,7 @@ class Image {
         if($yPos === 'center') $y = ($height - $cropHeight) / 2;
         if($yPos === 'bottom') $y = $height - $cropHeight;
 
-        $this->source->adaptiveResizeImage($width, $height);
+        $this->source->resizeImage($width, $height, Imagick::FILTER_SINC, 1);
         $this->source->cropImage($cropWidth, $cropHeight, $x, $y);
     }
 
@@ -75,7 +79,7 @@ class Image {
             $width = (int)($height / $this->info['height'] * $this->info['width']); 
         }
 
-        $this->source->adaptiveResizeImage($width, $height);
+        $this->source->resizeImage($width, $height, Imagick::FILTER_SINC, 1);
     }
 
     public function save($path, $type, $quality = 85) {
